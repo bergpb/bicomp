@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      BibComp
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <p *ngIf="autenticated">Olá {{ userEmail }}</p>
+    <p>BibComp é um aplicativo desenvolvido par compartilhamento de livro.</p>
+    <p>Para isto basta fazer o cadastro e desfrutar de todo nosso acervo digital.</p>
+    <!-- <ion-img src= "../../assets/telaInicial.png"></ion-img> -->
+  </div>
+<ion-grid>
+  <ion-row>
+      <ion-col *ngIf="autenticated" text-center>
+          <ion-button color= "primary" [routerLink]="['/login']">Login</ion-button>
+      </ion-col>
+      <ion-col *ngIf="autenticated" text-center>
+          <ion-button color= "primary" [routerLink]="['/register']">Registrar-se</ion-button>
+      </ion-col>
+      <ion-col *ngIf="!autenticated" text-center>
+          <ion-button color= "primary" (click) ="logout()">Sair</ion-button>
+      </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
